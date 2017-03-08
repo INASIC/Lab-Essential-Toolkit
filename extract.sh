@@ -14,14 +14,14 @@ function Fnb(){
 
 
 #We want a header to start with, separated by tabs. Adjacent strings automatically concatenate
-echo -e "A" "\tB" "\tC" "\tD"
+echo -e "A" "\tB" "\tC"
 #Look for .txt files in the current folder and put their name in fn. This is fairly dangerous if you intend to write to said files and they're not intended, but in this case we're simply reading them so it's fine.
 for fn in *.txt; do
 	#Inappropriate usage of the program cat, which reads the file name and puts it in the terminal. Notice the quotes.
 	file=$(cat "$fn")
 	#Write to the terminal the results of running Fna on the file contents, the -ne part means we don't want a new line, and we want special extensions.
-	echo -ne $(Fna "$file")"\t"
-	#Write with a newline, tabspaced Fnb 1 and Fnb 2
-	echo -e $(Fnb "$file" 1)"\t"$(Fnb "$file" 2)
+	echo -ne $(Fnb "$file")"\t"
+	#Write with a newline, tabspaced Fna 1 and Fna 2
+	echo -e $(Fna "$file" 1)"\t"$(Fna "$file" 2)
 #Alright, we're done here.
 done
