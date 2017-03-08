@@ -39,7 +39,7 @@ xerr(N) = "(somenumber)"
 yerr(N) = sprintf("(sqrt(($%d/$%d)**2 + (somenumber/$%d)**2 + (somenumber)**2))", BD(N), BB(N), AD(N))
 columns(N) = sprintf("%s:%s:%s:%s", xaxis(N), yaxis(N), xerr(N), yerr(N))
 fitopts(N) = sprintf("xyerrors")
-plotfhopts(N) = sprintf("w xyerrorbars ls %d t \"Peak %d\"", N, N)
+plotfhopts(N) = sprintf("w xyerrorbars ls %d t \"Dataset %d\"", N, N)
 plotfnopts(N) = sprintf("ls %d t \"Fit %d\"", N, N)
 
 #Using a for loop (same as a do loop), generate the commands for lines 1-3 and run them using eval.
